@@ -9,6 +9,19 @@ body {
     font-family: 'Quicksand', sans-serif;
 }
 
+.white {
+    width: 60%;
+    background-color: white;
+    height: 200px;
+    margin: auto;
+    margin-top: 20%;
+    color: black;
+}
+
+h5 {
+    font-weight: bold;
+}
+
 .register {
     color: #ffbb00 !important;
     border: 1px solid #ffbb00;
@@ -63,10 +76,14 @@ h3 {
 }
 
 .about {
-    margin-top: 20.3%;
-    background-color: black;
+    margin-top: 30%;
+    background-color: white;
+    color: black;
 }
 
+#about {
+    margin: 5% 10%;
+}
 
 /* Footer */
 #footer {
@@ -139,6 +156,9 @@ h3 {
     border: 0 solid black;
 }
 
+.card {
+    border: 0px solid white;
+}
 
 .cards {
     display: grid;
@@ -418,6 +438,13 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     padding: 12px; 
     font-size: 20px;
     color: #ffbb00; 
+    /* min-width: 50px;  */
+    text-align: center; 
+} 
+
+.iconBig { 
+    padding: 12px; 
+    font-size: 25px;
     /* min-width: 50px;  */
     text-align: center; 
 } 
