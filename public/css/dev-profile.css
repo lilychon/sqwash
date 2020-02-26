@@ -1,0 +1,22 @@
+#user-image {
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 1%;
+    background-color: transparent;
+
+}
+
+#user-view {
+    height: 600px;
+    border-right: 3px dashed #F09819;
+    text-align: center;
+}
+
+.fixed {
+    position: absolute;
+    width: inherit;
+}
+
+h1 {
+    text-align: center;
+}
