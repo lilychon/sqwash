@@ -182,6 +182,7 @@ h3 {
     border: outset 0px rgb(182, 171, 171);
 }
 
+
 #projDisp {
     /* margin-left: 40%; */
     /* text-align: center; */
@@ -528,6 +529,10 @@ li.project:before, li.activeproject:before, li.completeproject:before, li.applie
     left: -10px;
 } */
 
+li.project {
+    padding: 5px 0 20px 0;
+}
+
 .bold {
     color: #ffbb00;
     font-weight: bold;
@@ -619,4 +624,32 @@ ul {
 
 .big {
     font-size: 30px;
+}
+
+a {
+    color: rgb(88, 88, 88);
+    text-decoration: none;
+}
+
+a:active {
+    color: white;
+}
+
+/* effect-shine */
+a.effect-shine:hover {
+    color: white;
+    text-decoration: none;
+  -webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+  -webkit-mask-size: 200%;
+  animation: shine 2s infinite;
+}
+
+@-webkit-keyframes shine {
+  from {
+    -webkit-mask-position: 150%;
+  }
+  
+  to {
+    -webkit-mask-position: -50%;
+  }
 }

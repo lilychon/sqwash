@@ -28,9 +28,9 @@ $(document).ready(function () {
         projView.empty();
 
         $.get("/pick/" + projId).then(function (project) {
-            var source = `<div class='project-content mt-3'>
+            var source = `<div class='project-content text-left'>
                             <div class='project-title'>
-                            <h3 class='info mb-3'>Project Information</h3>
+                            <h3 class='mb-3'>Project Information</h3>
                                 <p class='bold'>TITLE</p>
                                 <p>{{title}}</p>
                             </div>
@@ -65,9 +65,9 @@ $(document).ready(function () {
             if (project.status === "Hiring") {
                 project.start = true;
                 var source = `
-                        <div class='project-content mt-3'>
+                        <div class='project-content text-left'>
                         <div class='project-title'>
-                        <h3 class='info mb-3'>Project Information</h3>
+                        <h3 class='mb-3'>Project Information</h3>
                             <p class='bold'>TITLE</p>
                             <p>{{title}}</p>
                         </div>
@@ -85,8 +85,8 @@ $(document).ready(function () {
             } else {
                 project.start = false;
                 var source = `
-            <div class='project-content mt-3'>
-            <h3 class='info mb-3'>Project Information</h3>
+            <div class='project-content text-left'>
+            <h3 class='mb-3'>Project Information</h3>
             <div class='project-title'>
             <p class='bold'>TITLE</p>
             <p>{{title}}</p>
@@ -192,7 +192,7 @@ $(document).ready(function () {
                 };
                 var bigProject = {...project,...projRating,...addObj};
                 var source = `
-                        <div class='project-content mt-3'>
+                        <div class='project-content text-left'>
                         <div class='project-title'>
                             <p class='bold'>TITLE</p>
                             <p>{{title}}</p>
@@ -289,35 +289,38 @@ $(document).ready(function () {
                                 </div>
                             </div>
                             <div class="row" id="startupWindows">
+                                <div class="p-2 col-sm-2 text-right">
+                                    <ul>
+                                        <li class ="p-2 projLink" id="find"><a href="#" class="effect-shine">Available</a></li>
+                                        <li class ="p-2 projLink" id="active"><a href="#" class="effect-shine">In Progress</a></li>
+                                        <li class ="p-2 projLink" id="complete"><a href="#" class="effect-shine">Completed</a></li>
+                                    </ul>
+                                </div>
                                 <div class="p-2 col-sm-3 overflow-auto" id="projDisp">
                                     <div class="container-fluid">
-                                        <div class="btn-group" role="group" aria-label="Basic example">
-                                        <button type="button" class="btn-proj" id="find" data-toggle="tooltip" data-placement="top" title="Available Projects"><i class="fas fa-file-alt iconB"></i></button>
-                                        <button type="button" class="btn-proj" id="active" data-toggle="tooltip" data-placement="top" title="Projects in Progress"><i class="fas fa-spinner iconB"></i></button>
-                                        <button type="button" class="btn-proj" id="complete" data-toggle="tooltip" data-placement="top" title="Completed Projects"><i class="fas fa-check iconB"></i></button>
-                                        </div>
+
                                         <div class="col-sm-12 overflow-auto" id="projView">
                                             <ul id="findList">
                                                 {{#each project}}
                                                 <li class="project" data-id="{{id}}">
-                                                    <h3> {{title}} </h3>
-                                                    <p> $ {{price}} </p>
+                                                    <h4> {{title}} </h4>
+                                                    <p class="bold"> $ {{price}} </p>
                                                 </li>
                                                 {{/each}}
                                             </ul>
                                             <ul id="activeList" style="display: none">
                                                 {{#each activeProject}}
-                                                <li class="activeproject" data-id="{{id}}">
-                                                    <h3> {{title}} </h3>
-                                                    <p>$ {{price}} </p>
+                                                <li class="project" data-id="{{id}}">
+                                                    <h4> {{title}} </h4>
+                                                    <p class="bold">$ {{price}} </p>
                                                 </li>
                                                 {{/each}}
                                             </ul>
                                             <ul id="completeList" style="display: none">
                                                 {{#each completeProject}}
-                                                <li class="completeproject" data-id="{{id}}">
-                                                    <h3> {{title}} </h3>
-                                                    <p> {{price}} </p>
+                                                <li class="project" data-id="{{id}}">
+                                                    <h4> {{title}} </h4>
+                                                    <p class="bold">$ {{price}} </p>
                                                 </li>
                                                 {{/each}}
                                             </ul>
@@ -326,7 +329,7 @@ $(document).ready(function () {
                                     </div>
                                 </div>
                             
-                                <div class="p-2 col-sm-8 overflow-auto" id="project-display-section">
+                                <div class="m-0 p-2 col-sm-6 overflow-auto" id="project-display-section">
                                 </div>
                             </div>
                         </div>
